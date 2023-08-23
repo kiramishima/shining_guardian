@@ -51,7 +51,7 @@ func (s *Server) Run() error {
 	}
 
 	go func() {
-		s.logger.Infof("Server is listening on PORT: %i", s.cfg.Port)
+		s.logger.Infof("Server is listening on PORT: %d", s.cfg.Port)
 
 		if err := server.Serve(s.app.Server); err != nil && !errors.Is(err, http.ErrServerClosed) {
 			s.logger.Fatalf("Error starting Server: ", err)

@@ -7,5 +7,6 @@ import (
 )
 
 type IAuthRepository interface {
-	SignIn(ctx context.Context, data domain.AuthRequest) (*domain.User, error)
+	FindByCredentials(ctx context.Context, data *domain.AuthRequest) (*domain.User, error)
+	Register(ctx context.Context, registerReq *domain.RegisterRequest) error
 }

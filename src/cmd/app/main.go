@@ -40,7 +40,7 @@ func serve(ctx context.Context, app *domain.App) error {
 	// Load Repository
 	repo := repository.NewAuthRepository(conn)
 	// Load Service
-	svc := services.NewAuthService(repo)
+	svc := services.NewAuthService(repo, logger)
 	// Load
 	h := handlers.NewAuthHandler(logger, svc, rendr)
 	//
